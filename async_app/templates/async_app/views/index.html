@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>FEDORA COMMUNITY</title>
+	
+	<style>
+		div{
+			background-color: blue;
+			margin: 30px;
+			margin-right: 40px;
+			border-radius: 20px;
+			text-align: center;
+			padding-top: 50px;
+			color: white;
+			box-shadow: 5px 5px 5px 5px gray;
+			font-size: 60px;
+		}
+		
+	</style>
+
+</head>
+
+<body>
+    <section>
+        <div>
+            <span class="card-title">HELLO WORLD!!!!</span>
+        </div>
+		<div>
+            <form action="{% url "contact" %}" method="post">
+				{% csrf_token %}	
+				{{ form.as_p }}
+				<input type="submit" value="Submit" />
+			</form>
+        </div>
+		<div>
+            <span class="card-title">Result: {{ sum1 }}</span>
+        </div>
+	</section>
+</body>
+
+</html>
