@@ -108,6 +108,20 @@ form = AddForm(request.POST or None)
 if the request method is POST, we get the value of the input, convert it in number and then call the task (in tasks.py) store the result in sum1.
 At the end server async_app/views/index.html template and parse it all local object!(form and sum1)
 
+## Launch server
+
+First, start redis-server
+```bash
+redis-server
+```
+Secondly, run worker in another terminal(In project root directory
+```bash
+celery worker -A async --loglevel=info
+```
+And finally start Django server
+```bash
+python manage.py runserver
+```
 ## Learn more
 See the following link
 [tutorial](https://stackabuse.com/asynchronous-tasks-in-django-with-redis-and-celery/)
